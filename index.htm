@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>青年不学习</title>
+		<meta charset="utf-8"/>
+	</head>
+	<body style="background-image: url(https://api.dujin.org/bing/1920.php)"> <!-- 必应每日一图API -->
+		
+		<!-- header -->
+		<div align="center">
+			<span>
+				<!-- 左右电摇护法和青年大学习(学个屁)logo -->
+				<img src="dianyao2.gif" alt="dianyao-L"/>
+				<img src="logo.png" alt="logo"/>
+				<img src="dianyao.gif" alt="dianyao-R"/>
+			</span>
+			<hr>
+		</div>
+		
+		<!-- main -->
+		<div align="center">
+			<h2 style="background-color: white;" id="title">欢迎使用 青年不学习 程序</h2>
+			<table width="400" border="3" style="background-color: #7070E0;" title="教程">
+				<tbody>
+					<tr>
+						<td style="text-align: center;color: #FFFFFF;"><strong>教&nbsp;&nbsp;程</strong></td>
+					</tr>
+					<tr>
+						<td style="color: #FFFFFF">
+							进入青年大学习的视频页面,然后查看右边二维码下面的链接,将
+							<strong>课程ID(有图例)</strong>
+							填入下面的指定位置,然后点击解析按钮.
+							<img src="tips.png" alt="Tips"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>&nbsp;</p>
+			<table width="300" border="3" style="background-color: #7070E0;" title="主程序">
+				<tbody>
+					<tr>
+						<td style="text-align: center;color: #FFFFFF;">输入课程ID</td>
+					</tr>
+					<tr>
+						<td style="color: #FFFFFF">
+							<span>
+								<input type="text" id="lessonID"/>
+								<button onClick="checkLesson()">解析</button>
+							</span>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p>&nbsp;</p>
+			<table width="700" border="3" style="background-color: #7070E0;" title="解析结果">
+				<tbody>
+					<tr>
+						<td style="text-align: center;color: #FFFFFF;">解析结果</td>
+					</tr>
+					<tr>
+						<td style="color: #FFFFFF" align="center">
+							<img src="logo.png" alt="解析结果" id="daxuexi_data"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<script>
+			function checkLesson() {
+				document.getElementById("daxuexi_data").src = "https://h5.cyol.com/special/daxuexi/" + document.getElementById("lessonID").value + "/images/end.jpg"
+			}
+		</script>
+		<script>
+			//h2颜色修改
+			var doc = document.getElementById("title")
+			function c1() {
+				doc.style = "background-color: white;color: #EE0000"
+				setTimeout("c2()",300);
+				document.title = "░░▓ 青年不学习 ░░▓"
+			}
+			function c2() {
+				doc.style = "background-color: white;color: #00EE00"
+				setTimeout("c3()",300);
+				document.title = "░▓░ 青年不学习 ░▓░"
+			}
+			function c3() {
+				doc.style = "background-color: white;color: #0000EE"
+				setTimeout("c1()",300);
+				document.title = "▓░░ 青年不学习 ▓░░"
+			}
+			
+			//调用循环
+			c1()
+		</script>
+	</body>
+</html>
